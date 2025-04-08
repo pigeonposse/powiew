@@ -3,13 +3,13 @@
 
 web:
   nestai:
-    name: nestai
-    desc: NestAI is a comprehensive Python library designed to simplify and enhance interactions with AI models across multiple providers.
-    homepage: https://github.com/pigeonposse/nestAI
-    docs: https://github.com/pigeonposse/nestAI/tree/master/examples
+    name: powiew
+    desc: Powiew is a revolutionary library that combines Chart.js, D3.js, and Three.js into one intuitive API for easy data visualization. It simplifies creating everything from basic charts to complex 3D visuals without sacrificing power or flexibility..
+    homepage: https://github.com/pigeonposse/powiew
+    docs: https://github.com/pigeonposse/powiew/tree/master/examples
     license:
       name: GPL-3.0
-      url: https://github.com/pigeonposse/nestAI/blob/main/LICENSE
+      url: https://github.com/pigeonposse/powiew/blob/main/LICENSE
     status: beta
     type:
       - library
