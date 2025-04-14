@@ -9,6 +9,7 @@
     "lint": "next lint",
     "update-version": "pnpm exec changeset && pnpm exec changeset version"
   },
+  "packageManager": "pnpm@9.7.0",
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
     "@radix-ui/react-accordion": "^1.2.2",
