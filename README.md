@@ -1,6 +1,6 @@
 # Powiew by _PIGEONPOSSE_
 
-![HEADER](docs/banner.png)
+![HEADER](https://github.com/pigeonposse/powiew/blob/main/docs/banner.png)
 
 [![Web](https://img.shields.io/badge/Web-grey?style=flat-square)](https://pigeonposse.com/)
 [![About us](https://img.shields.io/badge/About%20us-grey?style=flat-square)](https://pigeonposse.com/?popup=about)
@@ -26,7 +26,7 @@ With a robust built-in theming system, intelligent data processing, and advanced
 *   **💾 Export Capabilities** - Export visualizations as PNG, JPEG, or SVG
 *   **🎯 Event System** - Comprehensive event system for interaction
 
-![HEADER](docs/banner2.png)
+![HEADER](https://github.com/pigeonposse/powiew/blob/main/docs/banner2.png)
 
 🚀 Installation
 ---------------
