@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "update-version": "pnpm exec changeset && pnpm exec changeset version"
+    "update-version": "changeset && changeset version"
   },
   "packageManager": "pnpm@9.7.0",
   "dependencies": {
@@ -73,6 +73,8 @@
     "@types/react-dom": "^19",
     "postcss": "^8",
     "tailwindcss": "^3.4.17",
-    "typescript": "^5"
+    "typescript": "^5",
+    "@changesets/changelog-github": "0.5.0",
+    "@changesets/cli": "2.27.8"
   }
 }
