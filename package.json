@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "update-version": "changeset && changeset version"
+    "update-version": "pnpm exec changeset && pnpm exec changeset version"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
