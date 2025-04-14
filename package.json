@@ -10,6 +10,10 @@
     "update-version": "changeset && changeset version"
   },
   "packageManager": "pnpm@9.7.0",
+  "publishConfig": {
+		"access": "public",
+		"registry": "https://registry.npmjs.org/"
+	},
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
     "@radix-ui/react-accordion": "^1.2.2",
