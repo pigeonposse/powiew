@@ -1,7 +1,7 @@
 {
-  "name": "Powiew",
-  "version": "0.1.0",
-  "private": true,
+  "name": "progress",
+  "version": "2.0.1",
+  "description": "Powiew is a revolutionary library that combines Chart.js, D3.js, and Three.js into one intuitive API for easy data visualization.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
