@@ -1,14 +1,14 @@
 {
-  "name": "powiew",
-  "version": "2.0.3",
-  "description": "Powiew is a revolutionary library that combines Chart.js, D3.js, and Three.js into one intuitive API for easy data visualization.",
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "update-version": "changeset && changeset version"
-  },
+ 	 "name": "powiew",
+	"version": "2.0.3",
+	"description": "Powiew is a revolutionary library that combines Chart.js, D3.js, and Three.js into one intuitive API for easy data visualization.",
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint",
+		"update-version": "changeset && changeset version"
+	},
 	"bugs": {
 		"url": "https://github.com/pigeonposse/powiew/issues",
 		"email": "dev@pigeonposse.com"
@@ -27,11 +27,11 @@
 		"email": "alejo@pigeonposse.com",
 		"url": "https://github.com/alejomalia"
 	},
-  "packageManager": "pnpm@9.7.0",
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
+	"packageManager": "pnpm@9.7.0",
+	"publishConfig": {
+		"access": "public",
+		"registry": "https://registry.npmjs.org/"
+	},
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
     "@radix-ui/react-accordion": "^1.2.2",
