@@ -9,6 +9,24 @@
     "lint": "next lint",
     "update-version": "changeset && changeset version"
   },
+	"bugs": {
+		"url": "https://github.com/pigeonposse/powiew/issues",
+		"email": "dev@pigeonposse.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pigeonposse/powiew"
+	},
+	"funding": {
+		"type": "individual",
+		"url": "https://pigeonposse.com/?popup=donate"
+	},
+	"license": "GPL-3.0",
+	"author": {
+		"name": "Alejo",
+		"email": "alejo@pigeonposse.com",
+		"url": "https://github.com/alejomalia"
+	},
   "packageManager": "pnpm@9.7.0",
   "publishConfig": {
     "access": "public",
