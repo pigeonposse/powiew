@@ -1,37 +1,39 @@
 {
- 	"name": "powiew",
-	"version": "2.0.3",
-	"description": "Powiew is a revolutionary library that combines Chart.js, D3.js, and Three.js into one intuitive API for easy data visualization.",
-	"scripts": {
-		"dev": "next dev",
-		"build": "next build",
-		"start": "next start",
-		"lint": "next lint",
-		"update-version": "changeset && changeset version"
-	},
-	"bugs": {
-		"url": "https://github.com/pigeonposse/powiew/issues",
-		"email": "dev@pigeonposse.com"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/pigeonposse/powiew"
-	},
-	"funding": {
-		"type": "individual",
-		"url": "https://pigeonposse.com/?popup=donate"
-	},
-	"license": "GPL-3.0",
-	"author": {
-		"name": "Alejo",
-		"email": "alejo@pigeonposse.com",
-		"url": "https://github.com/alejomalia"
-	},
-	"packageManager": "pnpm@9.7.0",
-	"publishConfig": {
-		"access": "public",
-		"registry": "https://registry.npmjs.org/"
-	},
+  "name": "powiew",
+  "version": "2.1.0",
+  "description": "Powiew is a revolutionary library that combines Chart.js, D3.js, and Three.js into one intuitive API for easy data visualization.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "update-version": "changeset && changeset version",
+    "build:lib": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "bugs": {
+    "url": "https://github.com/pigeonposse/powiew/issues",
+    "email": "dev@pigeonposse.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pigeonposse/powiew"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://pigeonposse.com/?popup=donate"
+  },
+  "license": "GPL-3.0",
+  "author": {
+    "name": "Alejo",
+    "email": "alejo@pigeonposse.com",
+    "url": "https://github.com/alejomalia"
+  },
+  "packageManager": "pnpm@9.7.0",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
     "@radix-ui/react-accordion": "^1.2.2",
@@ -82,12 +84,8 @@
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^0.9.6",
     "zod": "^3.24.1",
-    "webpack": "latest",
-    "d3": "latest",
-    "three": "latest",
-    "path": "latest",
-    "fs": "latest",
-    "terser-webpack-plugin": "latest"
+    "d3": "^7.9.0",
+    "three": "^0.170.0"
   },
   "devDependencies": {
     "@types/node": "^22",
@@ -97,6 +95,21 @@
     "tailwindcss": "^3.4.17",
     "typescript": "^5",
     "@changesets/changelog-github": "0.5.0",
-    "@changesets/cli": "2.27.8"
-  }
+    "@changesets/cli": "2.27.8",
+    "esbuild": "^0.24.0"
+  },
+  "main": "dist/powiew.cjs",
+  "module": "dist/powiew.esm.js",
+  "unpkg": "dist/powiew.min.js",
+  "exports": {
+    ".": {
+      "import": "./dist/powiew.esm.js",
+      "require": "./dist/powiew.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE.txt"
+  ]
 }

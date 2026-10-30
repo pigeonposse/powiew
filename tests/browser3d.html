@@ -1,0 +1,23 @@
+<!doctype html>
+<meta charset="utf-8"><title>Powiew 3D smoke test</title>
+<script src="../dist/powiew.min.js"></script>
+<div id="a" style="width:300px;height:200px"></div><div id="b" style="width:300px;height:200px"></div>
+<div id="c" style="width:300px;height:200px"></div><div id="d" style="width:300px;height:200px"></div>
+<pre id="out">running</pre>
+<script>
+const r = {}, vis = new Powiew()
+const cases = {
+  bar3d: ["#a", { labels: ["A","B"], datasets: [{ label: "S", data: [3, 5] }] }],
+  scatter3d: ["#b", [{ x: 1, y: 2, z: 3 }, { x: 2, y: 1, z: 0 }]],
+  surface: ["#c", [[0,1,0],[1,2,1],[0,1,0]]],
+  globe: ["#d", []],
+}
+for (const [type, [sel, data]] of Object.entries(cases)) {
+  try {
+    const v = vis.create3DVisualization(sel, type, data)
+    r[type] = !!document.querySelector(sel + " canvas")
+    if (type === "bar3d") { vis.updateVisualization(v, { labels: ["A"], datasets: [{ data: [1] }] }); r.update = true; vis.destroyVisualization(v); r.destroy = true }
+  } catch (e) { r[type] = "ERR " + e.message }
+}
+document.getElementById("out").textContent = JSON.stringify(r)
+</script>

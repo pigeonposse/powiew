@@ -1,0 +1,33 @@
+<!doctype html>
+<meta charset="utf-8"><title>Powiew browser smoke test</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="../dist/powiew.min.js"></script>
+<div id="c" style="width:500px;height:300px"></div>
+<div id="t" style="width:500px;height:300px"></div>
+<pre id="out">running</pre>
+<script>
+(async () => {
+  const r = {}
+  try {
+    const mock = async () => JSON.stringify({ type: "bar", title: "Demo", labels: ["A","B","C"],
+      datasets: [{ label: "S", data: [3, 5, 2] }], axes: { x: "Letter", y: "Count", unit: null }, confidence: 0.9 })
+    // 1x1 PNG, enough for the loader
+    const png = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
+    const vis = new Powiew({ provider: mock })
+    const o = await vis.fromImage("#c", png)
+    r.chart = o.visualization.config.type
+    r.points = o.visualization.data.datasets[0].data
+    r.warnings = o.warnings
+    r.png = vis.exportAsImage(o.visualization, "png").slice(0, 22)
+    vis.updateVisualization(o.visualization, { labels: ["A"], datasets: [{ data: [1] }] })
+    r.updated = o.visualization.data.datasets[0].data
+    vis.destroyVisualization(o.visualization)
+    r.destroyed = true
+    try {
+      const t = vis.createD3Visualization("#t", "tree", { name: "root", children: [{ name: "a", value: 1 }, { name: "b", value: 2 }] })
+      r.d3 = !!document.querySelector("#t svg")
+    } catch (e) { r.d3 = "ERR " + e.message }
+  } catch (e) { r.error = e.message }
+  document.getElementById("out").textContent = JSON.stringify(r)
+})()
+</script>

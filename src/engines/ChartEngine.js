@@ -1,4 +1,5 @@
-import { Chart } from "@/components/ui/chart"
+// Chart.js is a peer dependency, loaded globally (CDN) or via window.Chart
+const getChart = () => (typeof window !== "undefined" ? window.Chart : undefined)
 /**
  * ChartEngine - Handles Chart.js visualizations
  */
@@ -13,7 +14,7 @@ class ChartEngine {
     this.themeManager = themeManager
 
     // Verify Chart.js is available
-    if (typeof Chart === "undefined") {
+    if (typeof getChart() === "undefined") {
       console.warn("Powiew: Chart.js is not loaded. Chart functionality will be unavailable.")
       return
     }
@@ -32,7 +33,7 @@ class ChartEngine {
    */
   createChart(container, type, data, options = {}) {
     // Verify Chart.js is available
-    if (typeof Chart === "undefined") {
+    if (typeof getChart() === "undefined") {
       throw new Error("Powiew: Chart.js is not loaded. Chart functionality will be unavailable.")
     }
 
@@ -61,7 +62,7 @@ class ChartEngine {
     const mergedOptions = this._mergeOptions(options, type)
 
     // Create and return the chart
-    return new Chart(ctx, {
+    return new (getChart())(ctx, {
       type: type,
       data: data,
       options: mergedOptions,

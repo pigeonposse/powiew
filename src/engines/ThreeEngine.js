@@ -2,7 +2,7 @@
  * ThreeEngine - Handles Three.js 3D visualizations
  */
 import * as THREE from "three"
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js"
 import { CHART_TYPES } from "../constants"
 
 class ThreeEngine {
